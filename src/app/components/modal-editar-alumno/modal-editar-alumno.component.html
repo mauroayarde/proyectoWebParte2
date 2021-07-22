@@ -1,0 +1,126 @@
+<form [formGroup]="alumnoForm" (submit)="enviarReactivo()"> 
+    
+        
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label> Nombre </mat-label>
+      <input matInput formControlName="nombres"  required>
+      <mat-error *ngIf="alumnoForm.controls.nombres.touched && alumnoForm.controls.nombres.invalid">
+        <span *ngIf="alumnoForm.controls.nombres.errors">Campo obligatorio</span>
+      </mat-error>
+    </mat-form-field>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label> Apellido </mat-label>
+        <input matInput formControlName="apellidos" required>
+        <mat-error *ngIf="alumnoForm.controls.apellidos.touched && alumnoForm.controls.apellidos.invalid">
+          <span *ngIf="alumnoForm.controls.apellidos.errors">Campo obligatorio</span>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label> Dni </mat-label>
+        <input matInput formControlName="dni" required>
+        <mat-error *ngIf="alumnoForm.controls.dni.touched && alumnoForm.controls.dni.invalid">
+          <span *ngIf="alumnoForm.controls.dni.errors">Campo obligatorio</span>
+        </mat-error>
+    </mat-form-field>
+    
+    &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label> Celular </mat-label>
+        <input matInput formControlName="celular" required>
+        <mat-error *ngIf="alumnoForm.controls.celular.touched && alumnoForm.controls.celular.invalid">
+          <span *ngIf="alumnoForm.controls.celular.errors">Campo obligatorio</span>
+        </mat-error>
+    </mat-form-field>
+    
+    <br>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label> Email </mat-label>
+      <input matInput formControlName="mail" required>
+      <mat-error *ngIf="alumnoForm.controls.mail.touched && alumnoForm.controls.mail.invalid">
+        <span *ngIf="alumnoForm.controls.mail.errors">Campo obligatorio</span>
+      </mat-error>
+  </mat-form-field>
+  
+    
+    
+    
+  <!--
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label> Imagen Presentacion </mat-label>
+        <input type="file" accept="image/*" (change)="readThis($event)"  formControlName="url_imagen_presentacion"  required>
+      
+        <mat-error *ngIf="nuevoCursoForm.controls.url_imagen_presentacion.touched && nuevoCursoForm.controls.url_imagen_presentacion.invalid">
+          <span *ngIf="nuevoCursoForm.controls.url_imagen_presentacion.errors">Campo obligatorio</span>
+        </mat-error>
+       
+    </mat-form-field>
+     -->
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  
+     <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label> Calle </mat-label>
+      <input matInput formControlName="direccion_calle" required>
+      <mat-error *ngIf="alumnoForm.controls.direccion_calle.touched && alumnoForm.controls.direccion_calle.invalid">
+        <span *ngIf="alumnoForm.controls.direccion_calle.errors">Campo obligatorio</span>
+      </mat-error>
+  </mat-form-field>
+    
+    <br>
+  
+  
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label> Nro </mat-label>
+      <input matInput formControlName="direccion_numero" required>
+      <mat-error *ngIf="alumnoForm.controls.direccion_numero.touched && alumnoForm.controls.direccion_numero.invalid">
+        <span *ngIf="alumnoForm.controls.direccion_numero.errors">Campo obligatorio</span>
+      </mat-error>
+  </mat-form-field>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label> Barrio </mat-label>
+      <input matInput formControlName="direccion_barrio" required>
+      <mat-error *ngIf="alumnoForm.controls.direccion_barrio.touched && alumnoForm.controls.direccion_barrio.invalid">
+        <span *ngIf="alumnoForm.controls.direccion_barrio.errors">Campo obligatorio</span>
+      </mat-error>
+  </mat-form-field>
+  
+    <br>
+  
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label> Localidad </mat-label>
+      <input matInput formControlName="direccion_localidad" required>
+      <mat-error *ngIf="alumnoForm.controls.direccion_localidad.touched && alumnoForm.controls.direccion_localidad.invalid">
+        <span *ngIf="alumnoForm.controls.direccion_localidad.errors">Campo obligatorio</span>
+      </mat-error>
+  </mat-form-field>
+    
+  
+    
+    
+    <br>
+  
+    <br>
+  
+    <div mat-dialog-actions>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <button mat-raised-button style="align-items: center;"  color="warn" mat-dialog-close>Salir</button>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <button mat-raised-button  style="align-items:center;"  color="primary">Guardar</button> &nbsp;&nbsp;
+      
+    </div>
+   
+    
+  
+  </form>
+  
+  

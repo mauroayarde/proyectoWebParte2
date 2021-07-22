@@ -1,0 +1,8 @@
+<p style="font-weight: bold;">Ventana de Confirmacion <mat-icon>delete</mat-icon><br>
+    Esta seguro que desea Eliminar el Curso {{nombreCurso}}???</p>
+
+    <button mat-button></button>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button mat-raised-button mat-dialog-close color="warn">Cancelar</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-raised-button (click)="eliminarCurso()" mat-dialog-close color="primary">Aceptar</button>
+         </div>

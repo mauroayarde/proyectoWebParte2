@@ -1,0 +1,29 @@
+<mat-toolbar color="primary"> 
+  </mat-toolbar>
+  <div class="titulo">
+  <strong >Full Entrenador</strong>
+</div>
+  <div class="login">
+      
+
+    <form [formGroup]="loginForm"> 
+
+      <mat-form-field class="form-field">
+        <mat-label> Email </mat-label>
+        <input matInput  formControlName="email"  required>
+        <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+          <span *ngIf="loginForm.controls.email.errors">Campo obligatorio</span>
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="form-field">
+        <mat-label> Contraseña </mat-label>
+        <input matInput type="password" formControlName="contraseña"   required>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" (click)="validarUsuario()">Ingresar</button>      
+  </form>
+    
+    </div>
+
+  

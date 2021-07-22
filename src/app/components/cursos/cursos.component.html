@@ -1,0 +1,138 @@
+<div class="container">
+
+<p>
+  <mat-toolbar color="primary">
+   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Cursos</span>
+  
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   
+ </button>
+</mat-toolbar>
+</p>
+<p style="text-align: right;">    
+ <button style="align-items:center;" mat-raised-button color="primary"  (click)="nuevoCurso()">Nuevo Curso</button>
+</p> 
+<div class="example-header">
+
+<mat-form-field>
+  <mat-label>Busqueda</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="filtrar" #input>
+</mat-form-field>
+</div>
+
+<div class="mat-elevation-z8" style="width: fit-content;">
+  <mat-table [dataSource]="dataSource" matSort>
+
+    
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id_cursos}} </td>
+    </ng-container>
+    <!--
+-->
+
+<ng-container matColumnDef="url_imagen_presentacion">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header> Url imagen presentacion </th>
+  <td mat-cell *matCellDef="let element"><br> <img [src]="element.url_imagen_presentacion" height="100px" width="200px"> </td>
+</ng-container>
+   
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+    <div>
+    <ng-container matColumnDef="habilitaInscripcion">
+      
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Inscripcion Habilitada </th>
+      <td mat-cell *matCellDef="let element">
+      <mat-slide-toggle  checked="{{element.habilita_inscripcion}}" color="primary">
+        <span *ngIf="element.habilita_inscripcion==1">Si</span>
+        <span *ngIf="element.habilita_inscripcion==0">No</span>
+      </mat-slide-toggle>
+    </td>
+    </ng-container>
+  </div>
+  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div>
+    <ng-container matColumnDef="cursoPublicado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Curso Publicado </th>
+      <td mat-cell *matCellDef="let element">
+      <mat-slide-toggle  checked="{{element.estado_publicacion}}" color="primary">
+        <span *ngIf="element.estado_publicacion==1">Si</span>
+        <span *ngIf="element.estado_publicacion==0">No</span>
+      </mat-slide-toggle>
+    </td>
+    </ng-container>
+  </div>
+   <!--
+    <ng-container matColumnDef="requisitos">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Requisitos </th>
+      <td mat-cell *matCellDef="let element"> {{element.requisitos}} </td>
+    </ng-container>
+
+    
+   
+
+    
+    <ng-container matColumnDef="url_video_presentacion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Url video presentacion </th>
+      <td mat-cell *matCellDef="let element"> {{element.url_video_presentacion}} </td>
+    </ng-container>
+
+    
+    --> 
+    <ng-container matColumnDef="precio_inscripcion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio Inscripcion</th>
+      <td mat-cell *matCellDef="let element"> {{element.precio_inscripcion}} </td>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="precio_cuota">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio Cuota </th>
+      <td mat-cell *matCellDef="let element"> {{element.precio_cuota}} </td>
+    </ng-container>
+
+
+<!--  
+    <ng-container matColumnDef="cantidad_cuotas">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Cantidad Cuotas </th>
+      <td mat-cell *matCellDef="let element"> {{element.cantidad_cuotas}} </td>
+    </ng-container>
+-->  
+  
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Acciones </th>
+      <td mat-cell *matCellDef="let element"><button mat-button (click)="modificarCurso(element.id_cursos)"><mat-icon> border_color</mat-icon></button>
+      <button mat-button (click)="eliminarCurso(element.id_cursos,element.nombre)"><mat-icon>delete</mat-icon></button> <button mat-button (click)="nuevaComision(nuevaComision)"><mat-icon>people</mat-icon></button>   </td>
+    </ng-container>
+
+    <!--
+    <ng-container matColumnDef="id_rubros">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Rubros </th>
+      <td mat-cell *matCellDef="let element"> {{element.id_subrubros}} </td>
+    </ng-container>
+    -->
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+     Row shown when there is no matching data.
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+
+
+</div>
+          
+    
+
+  
+</div>
